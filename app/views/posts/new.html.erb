@@ -1,0 +1,13 @@
+<h1>new페이지입니다</h1>
+
+<!-- <form action="/posts/create" method="POST">
+  <input type="text" name="title" />
+  <textarea type="text" name="content"></textarea>
+  <button type="submit">제출</button>
+</form> -->
+
+<%= form_for(@post) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>

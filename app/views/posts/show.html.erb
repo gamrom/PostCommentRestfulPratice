@@ -1,0 +1,23 @@
+<h1>show페이지입니다</h1>
+
+게시글넘버 : <%= @post.id %> <br />
+제목: <%= @post.title %> <br />
+내용: <%= @post.content %>
+
+
+
+<!-- 댓글 구현 합니다 -->
+<!-- <form action="/posts/comment_create/<%= @post.id %>" method="POST">
+  <textarea type="text" name="comment_content"></textarea>
+  <button type="submit">댓글입력</button>
+</form> -->
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<%= f.text_field :content %>
+	<%= f.submit %>
+<% end %>
+
+
+<% @comments.each do |c| %>
+  <%= c.content %>
+<% end %>
